@@ -1,15 +1,9 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="kalasalingam, #MADALA CHAITANYA PRABHU, MADALA_CHAITANYA_PRABHU_PORTFOLIO,Chaitu,MCP,Chaitanya_MCP,ACM,madala chaitanya prabhu,chaitu,mcp,chaitanya prabhu" >
-    <meta name="description" content="Welcome to the official portfolio of Madala Chaitanya Prabhu — Developer, Innovator, and ACM Member. Explore my projects, skills, and achievements.">
-    <meta name="author" content="Madala Chaitanya Prabhu">
-    <meta property="og:title" content="Madala Chaitanya Prabhu Portfolio">
-    <meta property="og:description" content="Explore the portfolio of Madala Chaitanya Prabhu - Developer and Research Enthusiast.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mcp-27.github.io/MADALA_CHAITANYA_PRABHU_PORTFOLIO/">
-    <title>Madala Chaitanya Prabhu </title>
+    <title>Madala Chaitanya Prabhu | Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <style>
+	
         :root {
             --primary: #4F46E5;
             --secondary: #3B82F6;
@@ -43,16 +38,50 @@
             font-family: 'Poppins', sans-serif;
             background-color: var(--light);
             color: var(--dark);
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 10px;
+                padding-right: 10px;
+                width: 100vw;
+                max-width: 100vw;
+                box-sizing: border-box;
+            }
+            
+            body, html {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+            
+            section, header, footer, .hero-section, .projects-section, .skills-section, .about-section, .contact-section {
+                width: 100%;
+                max-width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 0;
+                padding-right: 0;
+                box-sizing: border-box;
+            }
         }
         
         .montserrat {
             font-family: 'Montserrat', sans-serif;
-			font-size: 30px;
         }
-		
-		.he{
-		padding-left: 45px;
-		}
         
         .gradient-text {
             background: var(--gradient-1);
@@ -104,6 +133,22 @@
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Contact section styles */
+        .contact-info p, .contact-info a {
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            max-width: 100%;
+            display: inline-block;
+        }
+        
+        /* Email display */
+        .email-container {
+            word-break: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
         }
         
         .project-card {
@@ -205,41 +250,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
-        .hexagon {
-            position: relative;
-            width: 100px;
-            height: 57.74px;
-            background: var(--gradient-1);
-            margin: 28.87px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .hexagon:before,
-        .hexagon:after {
-            content: "";
-            position: absolute;
-            width: 0;
-            border-left: 50px solid transparent;
-            border-right: 50px solid transparent;
-        }
-        
-        .hexagon:before {
-            bottom: 100%;
-            border-bottom: 28.87px solid var(--primary);
-        }
-        
-        .hexagon:after {
-            top: 100%;
-            width: 0;
-            border-top: 28.87px solid var(--secondary);
-        }
-        
         .social-icon {
             display: inline-flex;
             align-items: center;
@@ -298,28 +308,243 @@
             width: 100%;
         }
         
-        /* For PDF export optimization */
-        @media print {
-            .container {
-                width: 100%;
-                max-width: none;
-            }
-            
-            section {
-                page-break-inside: avoid;
-            }
+        .profile-image {
+            box-shadow: 20px 20px 0 var(--primary);
         }
         
+        /* Floating elements animation */
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Glowing dot animation */
+        .glow {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent); }
+            to { box-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent); }
+        }
+        
+        /* Project background images */
         .project-1 { background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); }
         .project-2 { background-image: url('https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80'); }
         .project-3 { background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80'); }
         .project-4 { background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80'); }
         .project-5 { background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); }
         
-        .profile-image {
-            box-shadow: 20px 20px 0 var(--primary);
+        /* Chatbot styles with enhanced colors */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
         }
         
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10B981, #3B82F6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+        
+        .chatbot-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(16, 185, 129, 0.5);
+            background: linear-gradient(135deg, #0EA5E9, #8B5CF6);
+        }
+        
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            max-width: 90vw;
+            height: 450px;
+            max-height: 80vh;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+        
+        .chatbot-header {
+            background: linear-gradient(135deg, #10B981, #3B82F6);
+            color: white;
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .chatbot-messages {
+            height: 320px;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            background-color: #f8fafc;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            line-height: 1.5;
+        }
+        
+        .bot-message {
+            background: linear-gradient(to right, #f1f5f9, #e0f2fe);
+            color: #334155;
+            border-top-left-radius: 0;
+            align-self: flex-start;
+            border-left: 3px solid #10B981;
+        }
+        
+        .bot-message a {
+            color: #0284c7;
+            text-decoration: underline;
+            display: inline-block;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .bot-message a:hover {
+            color: #0ea5e9;
+            text-decoration: none;
+        }
+        
+        .user-message {
+            background: linear-gradient(135deg, #4F46E5, #3B82F6);
+            color: white;
+            border-top-right-radius: 0;
+            align-self: flex-end;
+            margin-left: auto;
+            box-shadow: 0 2px 10px rgba(59, 130, 246, 0.2);
+        }
+        
+        .chatbot-input {
+            display: flex;
+            padding: 12px;
+            border-top: 1px solid #e5e7eb;
+            background-color: white;
+        }
+        
+        .chatbot-input input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 24px;
+            margin-right: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .chatbot-input input:focus {
+            outline: none;
+            border-color: #10B981;
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.1);
+        }
+        
+        .chatbot-input button {
+            background: linear-gradient(135deg, #10B981, #3B82F6);
+            color: white;
+            border: none;
+            border-radius: 24px;
+            padding: 10px 16px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .chatbot-input button:hover {
+            background: linear-gradient(135deg, #0EA5E9, #8B5CF6);
+            transform: translateY(-1px);
+        }
+        
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .suggestion {
+            background: linear-gradient(to right, #e0f2fe, #dbeafe);
+            color: #0284c7;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 13px;
+            cursor: pointer;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.2s ease;
+        }
+        
+        .suggestion:hover {
+            background: linear-gradient(to right, #bae6fd, #bfdbfe);
+            transform: translateY(-1px);
+        }
+        
+        /* Responsive adjustments for chatbot */
+        @media (max-width: 480px) {
+            .chatbot-window {
+                width: 300px;
+                max-width: 90vw;
+                height: 400px;
+            }
+            
+            .chatbot-messages {
+                height: 270px;
+            }
+            
+            .message {
+                max-width: 85%;
+                padding: 10px 14px;
+                font-size: 14px;
+            }
+            
+            .bot-message a {
+                word-break: break-all;
+            }
+            
+            .chatbot-input input {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+            
+            .chatbot-input button {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+        }
+		
         /* Floating elements animation */
         .floating {
             animation: float 6s ease-in-out infinite;
@@ -368,6 +593,99 @@
         .logos-swiper {
             padding-bottom: 40px;
         }
+        
+        /* Monthly updates slideshow styles */
+        .monthly-updates-section {
+            background: linear-gradient(to bottom, #f0f7ff, #f9fcff);
+            border-top: 1px solid rgba(203, 213, 224, 0.3);
+            border-bottom: 1px solid rgba(203, 213, 224, 0.3);
+        }
+        
+        .monthly-updates-swiper {
+            padding-bottom: 40px;
+        }
+        
+        .monthly-updates-swiper .swiper-slide {
+            height: auto;
+        }
+        
+        .monthly-updates-container .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .monthly-updates-container .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: top right;
+            opacity: 0.07;
+            z-index: 0;
+        }
+        
+        .monthly-updates-container .card-motivational::before {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>');
+        }
+        
+        .monthly-updates-container .card-ai::before {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z"></path><path d="M12 6v4"></path><path d="M8 10h8"></path></svg>');
+        }
+        
+        .monthly-updates-container .card-motivation::before {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>');
+        }
+        
+        .monthly-updates-container .card-education::before {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>');
+        }
+        
+        .monthly-updates-container .card-inspirational::before {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>');
+        }
+        
+        .monthly-updates-container .card-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--gradient-2);
+            color: white;
+            margin-right: 12px;
+        }
+        
+        .monthly-updates-container .card p {
+            flex-grow: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .monthly-updates-container .card h3 {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .monthly-updates-swiper .swiper-pagination-bullet-active {
+            background-color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .monthly-updates-container .card {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -389,10 +707,22 @@
                     <a href="#contact" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Contact</a>
                 </nav>
                 <div class="md:hidden">
-                    <button class="text-gray-700 focus:outline-none">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#about" class="text-gray-700 hover:text-gray-900 font-medium">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-gray-900 font-medium">Skills</a>
+                    <a href="#achievements" class="text-gray-700 hover:text-gray-900 font-medium">Achievements</a>
+                    <a href="#research" class="text-gray-700 hover:text-gray-900 font-medium">Research Work</a>
+                    <a href="#MonthlyUpdates" class="text-gray-700 hover:text-gray-900 font-medium">Monthly Updates</a>
+                    <a href="#contact" class="text-gray-700 hover:text-gray-900 font-medium">Contact</a>
+                </nav>
             </div>
         </div>
     </header>
@@ -401,22 +731,21 @@
     <section id="home" class="hero-section pt-24 md:pt-0 flex items-center relative overflow-hidden">
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-12 md:mb-0 he" data-aos="fade-right" data-aos-duration="1000">
-                    <div class="flex items-center pl-3 space-x-2 mb-4">
+                <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="flex items-center space-x-2 mb-4">
                         <div class="glow"></div>
                         <p class="text-sm font-medium text-gray-600">Tech Innovator & Researcher</p>
                     </div>
-                    <h4 class="text-4xl pl-3 md:text-6xl font-bold mb-6 montserrat">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6 montserrat">
                         <span class="gradient-text">MADALA</span> CHAITANYA PRABHU
-                    </h4>
-                    <p class="text-xl md:text-2xl mb-8 pl-3 text-gray-700">I build 
+                    </h2>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-700">I build 
                         <span id="typed-text" class="gradient-text font-semibold"></span>
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="https://drive.google.com/file/d/1ePalU_Bb8V8dabFpR9HuOM4YBEw8l37s/view?usp=sharing" class="btn bg-white border border-gray-300 text-gray-700 hover:border-gray-400">View Resume</a>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://drive.google.com/file/d/1ePalU_Bb8V8dabFpR9HuOM4YBEw8l37s/view?usp=sharing" target="_blank" class="btn bg-white border border-gray-300 text-gray-700 hover:border-gray-400">View Resume</a>
                         <a href="https://scholar.google.com/citations?user=VHumc_gAAAAJ&hl=en%20ew" target="_blank" class="btn gradient-bg text-white">Google Scholar</a>
-						<a href="https://www.linkedin.com/in/mc-prabhu/" target="_blank" class="btn gradient-bg text-white hover:border-gray-400">LinkedIn Profile</a>
-
+                        <a href="https://www.linkedin.com/in/mc-prabhu/" target="_blank" class="btn gradient-bg text-white hover:border-gray-400">LinkedIn Profile</a>
                     </div>
                 </div>
                 <div class="md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
@@ -429,8 +758,8 @@
         </div>
         <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
     </section>
-
-    <!-- Logo Slideshow Section -->
+	
+	  <!-- Logo Slideshow Section -->
     <section class="py-12 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-10" data-aos="fade-up" data-aos-duration="1000">
@@ -481,53 +810,37 @@
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-up" data-aos-duration="1000">
-                    <h2 class="text-3xl font-bold mb-2 montserrat">
-                        <span class="gradient-text">About</span> Me
-                    </h2>
-                    <div class="w-20 h-1 mb-6 gradient-bg rounded-full"></div>
-                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Architecting Tomorrow's Techscape, One Innovation at a Time 🚀💻</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Hey, I'm Chaitanya a passionate and driven individual with a deep-seated enthusiasm for event management and data science. I am on a journey to make significant strides in the tech and innovation world.
-                    </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        My extensive experience in organizing over 45 events, including national competitions like SIH 2023 and Hack Odyssey with 350+ participants, highlights my leadership and initiative. My foundation in data science is solid, built through my current role as a Data Science intern at Pheme Software Pvt Ltd, where I focus on statistical analysis and visualization.
-                    </p>
-                    <p class="text-gray-600 leading-relaxed">
-                        I am passionate about driving innovation and career development, proposing initiatives like the Tech Innovation Challenge Series and Cisco Tech Talks. My strong work ethic, multitasking abilities, and adaptability make me well-suited for dynamic and challenging environments recently recived 1-lakh Grant for my Research work under IndiaAI.
-                    </p>
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="text-3xl font-bold mb-2 montserrat">
+                    About <span class="gradient-text">Me</span>
+                </h2>
+                <div class="w-20 h-1 mx-auto mb-6 gradient-bg rounded-full"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="https://i.postimg.cc/vZwHnnbV/Whats-App-Image-2025-05-28-at-17-12-56-a2d1ff5c.jpg" alt="Madala Chaitanya Prabhu" class="rounded-lg shadow-xl w-full max-w-md mx-auto">
                 </div>
-                <div class="md:w-1/2 md:pl-20" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="card p-6 bg-white">
-                            <div class="hexagon mb-4">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2 text-center">Research everything</h3>
-                            <p class="text-gray-600 text-center">Dive deep into every aspect of your topic—knowledge is power.</p>
-                        </div>
-                        <div class="card p-6 bg-white">
-                            <div class="hexagon mb-4">
-                                <i class="fas fa-pencil-ruler"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2 text-center">Design everything</h3>
-                            <p class="text-gray-600 text-center">Design with intention, and let your creativity shape the world.</p>
-                        </div>
-                        <div class="card p-6 bg-white">
-                            <div class="hexagon mb-4">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2 text-center">Respect Boundaries</h3>
-                            <p class="text-gray-600 text-center">Respect boundaries, build a world where collaboration thrives.</p>
-                        </div>
-                        <div class="card p-6 bg-white">
-                            <div class="hexagon mb-4">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2 text-center">Ship it like it's hot</h3>
-                            <p class="text-gray-600 text-center">Deliver with passion and precision—make every project count.</p>
-                        </div>
+                <div class="md:w-2/3" data-aos="fade-left" data-aos-duration="1000">
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        I am Madala Chaitanya Prabhu, a dedicated tech innovator and researcher with a passion for exploring the frontiers of artificial intelligence and data science. My journey in technology began with a fascination for how computational systems can solve complex real-world problems, leading me to pursue excellence in both academic research and practical applications.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        With a strong foundation in machine learning, computer vision, and data analytics, I've contributed to multiple IEEE publications and developed innovative solutions across various domains. My approach combines rigorous analytical thinking with creative problem-solving, allowing me to tackle challenges from unique perspectives.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        I believe in the power of technology to transform lives and industries. Whether it's developing predictive models for financial markets, creating safety systems using computer vision, or forecasting weather patterns through data analytics, my goal remains consistent: to create solutions that are not just technically sound but also meaningful and impactful.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Beyond technical expertise, I value collaboration, continuous learning, and ethical considerations in technology development. I'm particularly interested in responsible AI implementation, ensuring that the solutions we build today create a better tomorrow for everyone.
+                    </p>
+                    <div class="mt-8 p-6 bg-gray-50 rounded-lg border-l-4 border-indigo-500">
+                        <p class="text-gray-700 italic">
+                            "Apesi odipoina vadu unadu kani Prayatnistu odipoinavadu ledu...!"
+                        </p>
+                        <p class="text-gray-500 text-sm mt-2">
+                            (Translation: "There are people who have given up, but there is no one who has failed while trying!")
+                        </p>
                     </div>
                 </div>
             </div>
@@ -539,89 +852,119 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
                 <h2 class="text-3xl font-bold mb-2 montserrat">
-                    My <span class="gradient-text">Skills</span> & Expertise
+                    My <span class="gradient-text">Expertise</span>
                 </h2>
                 <div class="w-20 h-1 mx-auto mb-6 gradient-bg rounded-full"></div>
                 <p class="text-gray-600 max-w-2xl mx-auto">
-                    My diverse skill set spans across data science, web development, and event management, allowing me to bring innovative solutions to complex challenges.
+                    I've developed a diverse technical skill set through academic research, practical projects, and continuous learning.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                <div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Technical Skills</h3>
+                    
                     <div class="mb-8">
                         <div class="flex justify-between mb-2">
-                            <h3 class="font-semibold text-gray-700">Data Science & Machine Learning</h3>
+                            <h4 class="font-semibold text-gray-700">Python</h4>
                             <span class="text-sm font-medium text-gray-500">95%</span>
                         </div>
                         <div class="skill-progress">
-                            <div class="skill-bar" style="width: 95%"></div>
+                            <div class="skill-bar" data-width="95%"></div>
                         </div>
                     </div>
+                    
                     <div class="mb-8">
                         <div class="flex justify-between mb-2">
-                            <h3 class="font-semibold text-gray-700">Statistical Analysis & Visualization</h3>
-                            <span class="text-sm font-medium text-gray-500">86%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-bar" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-8">
-                        <div class="flex justify-between mb-2">
-                            <h3 class="font-semibold text-gray-700">Research & Academic Writing</h3>
-                            <span class="text-sm font-medium text-gray-500">99.9%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-bar" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-8">
-                        <div class="flex justify-between mb-2">
-                            <h3 class="font-semibold text-gray-700">Event Management</h3>
-                            <span class="text-sm font-medium text-gray-500">95%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-bar" style="width: 95%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="mb-8">
-                        <div class="flex justify-between mb-2">
-                            <h3 class="font-semibold text-gray-700">Web Development</h3>
-                            <span class="text-sm font-medium text-gray-500">80%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-bar" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-8">
-                        <div class="flex justify-between mb-2">
-                            <h3 class="font-semibold text-gray-700">UI/UX Design</h3>
-                            <span class="text-sm font-medium text-gray-500">70%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-bar" style="width: 70%"></div>
-                        </div>
-                    </div>
-                    <div class="mb-8">
-                        <div class="flex justify-between mb-2">
-                            <h3 class="font-semibold text-gray-700">Leadership & Team Management</h3>
+                            <h4 class="font-semibold text-gray-700">Machine Learning</h4>
                             <span class="text-sm font-medium text-gray-500">90%</span>
                         </div>
                         <div class="skill-progress">
-                            <div class="skill-bar" style="width: 90%"></div>
+                            <div class="skill-bar" data-width="90%"></div>
                         </div>
                     </div>
+                    
                     <div class="mb-8">
                         <div class="flex justify-between mb-2">
-                            <h3 class="font-semibold text-gray-700">Problem Solving</h3>
+                            <h4 class="font-semibold text-gray-700">Data Science</h4>
+                            <span class="text-sm font-medium text-gray-500">85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-bar" data-width="85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <h4 class="font-semibold text-gray-700">Web Development</h4>
+                            <span class="text-sm font-medium text-gray-500">80%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-bar" data-width="80%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <h4 class="font-semibold text-gray-700">Computer Vision</h4>
+                            <span class="text-sm font-medium text-gray-500">85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-bar" data-width="85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <h4 class="font-semibold text-gray-700">Natural Language Processing</h4>
+                            <span class="text-sm font-medium text-gray-500">80%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-bar" data-width="80%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left" data-aos-duration="1000">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Professional Skills</h3>
+                    
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <h4 class="font-semibold text-gray-700">Research & Analysis</h4>
                             <span class="text-sm font-medium text-gray-500">95%</span>
                         </div>
                         <div class="skill-progress">
-                            <div class="skill-bar" style="width: 95%"></div>
+                            <div class="skill-bar" data-width="95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <h4 class="font-semibold text-gray-700">Project Management</h4>
+                            <span class="text-sm font-medium text-gray-500">85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-bar" data-width="85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <h4 class="font-semibold text-gray-700">Leadership & Team Management</h4>
+                            <span class="text-sm font-medium text-gray-500">90%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-bar" data-width="90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <h4 class="font-semibold text-gray-700">Problem Solving</h4>
+                            <span class="text-sm font-medium text-gray-500">95%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-bar" data-width="95%"></div>
                         </div>
                     </div>
                 </div>
@@ -802,7 +1145,6 @@
                         <h3 class="text-xl font-bold mt-2 mb-2 text-white">DEEP LEARNING RESEARCHWORK</h3>
                         <p class="text-gray-200 mb-4">
                             A Deep Learning Dive into Predicting Pneumonia Disease Using ANN and CNN Techniques
-
                         </p>
                         <a href="https://ieeexplore.ieee.org/abstract/document/10704118" target="_blank" class="text-white font-medium hover:text-blue-200 transition">
                             View Project <i class="fas fa-arrow-right ml-1"></i>
@@ -843,13 +1185,12 @@
                         <p class="text-gray-200 mb-4">
                             Automated Disease Detection and Medication Tracing System Using BioGPT
                         </p>
-                        <a href=" <!-- paper link --> " target="_blank" class="text-white font-medium hover:text-blue-200 transition">
-                            View Project <i class="fas fa-arrow-right ml-1"></i>
+                        <a href="soon " class="text-white font-medium hover:text-blue-200 transition">
+                            Soon the Publication ahead <i class="fas fa-arrow-right ml-1"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Hydrosavvy Project -->
                 <div class="project-card project-5">
                     <div class="project-content">
                         <span class="text-xs font-medium text-white bg-indigo-500 px-3 py-1 rounded-full">Future Project</span>
@@ -857,8 +1198,103 @@
                         <p class="text-gray-200 mb-4">
                             An innovative, intelligent irrigation system that optimizes water application and increases crop yields using IoT, AI, and advanced sensors.
                         </p>
-                        <div class="text-white font-medium text-sm">Why farmers can't use AI? We're changing that!</div>
+                        <a href=" soon " class="text-white font-medium hover:text-blue-200 transition">
+                            Very Soon <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monthly Updates Slideshow -->
+    <section class="py-16 monthly-updates-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="text-3xl font-bold mb-2 montserrat">
+                    Monthly <span class="gradient-text">Updates</span>
+                </h2>
+                <div class="w-20 h-1 mx-auto mb-6 gradient-bg rounded-full"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Stay informed with the latest updates, insights, and inspirations from my journey.
+                </p>
+            </div>
+            
+            <div class="monthly-updates-container" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                <div class="swiper monthly-updates-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card card-motivational p-8 h-full">
+                                <div class="flex items-center mb-4">
+                                    <div class="card-icon">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </div>
+                                    <p class="text-sm font-medium text-gray-600">Motivational Quote</p>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4 text-gray-800">Embrace the Journey</h3>
+                                <p class="text-gray-700">
+                                    "Success is not final, failure is not fatal: It is the courage to continue that counts." The path to innovation is paved with persistence and resilience.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-ai p-8 h-full">
+                                <div class="flex items-center mb-4">
+                                    <div class="card-icon">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <p class="text-sm font-medium text-gray-600">This Month's AI Update</p>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4 text-gray-800">Breakthroughs in Computer Vision</h3>
+                                <p class="text-gray-700">
+                                    Exploring the latest advancements in computer vision technology and how they're revolutionizing industrial safety systems and medical diagnostics.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-motivation p-8 h-full">
+                                <div class="flex items-center mb-4">
+                                    <div class="card-icon">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </div>
+                                    <p class="text-sm font-medium text-gray-600">Motivation Behind the Work</p>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4 text-gray-800">Solving Real-World Problems</h3>
+                                <p class="text-gray-700">
+                                    My passion lies in creating technology that addresses tangible challenges. From healthcare to agriculture, I'm driven by the potential to make a meaningful impact.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-education p-8 h-full">
+                                <div class="flex items-center mb-4">
+                                    <div class="card-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <p class="text-sm font-medium text-gray-600">Education Updates</p>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4 text-gray-800">Continuous Learning Journey</h3>
+                                <p class="text-gray-700">
+                                    Recently completed specialized courses in advanced Responsble-AI and ethical-AI implementation, expanding my toolkit for innovative solutions.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-inspirational p-8 h-full">
+                                <div class="flex items-center mb-4">
+                                    <div class="card-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="text-sm font-medium text-gray-600">Inspirational Quote</p>
+                                </div>
+                                <h3 class="text-xl font-bold mb-4 text-gray-800">Dream, Build, Achieve</h3>
+                                <p class="text-gray-700">
+                                    "The future belongs to those who believe in the beauty of their dreams".
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
@@ -869,75 +1305,67 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
                 <h2 class="text-3xl font-bold mb-2 montserrat">
-                    Get in <span class="gradient-text">Touch</span>
+                    Get <span class="gradient-text">In Touch</span>
                 </h2>
                 <div class="w-20 h-1 mx-auto mb-6 gradient-bg rounded-full"></div>
                 <p class="text-gray-600 max-w-2xl mx-auto">
-                    Have a project in mind or want to collaborate? Feel free to reach out and let's create something amazing together.
+                    I'm always interested in hearing about new opportunities, collaborations, or just connecting with fellow technology enthusiasts.
                 </p>
             </div>
 
-            <div class="flex flex-col md:flex-row" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
-                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Let's Connect</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision. Let's connect and make something special together!
-                    </p>
-                    
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center mr-4">
-                            <i class="fas fa-map-marker-alt text-white"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-medium text-gray-800">Location</h4>
-                            <p class="text-gray-600">India</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center mr-4">
-                            <i class="fas fa-envelope text-white"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-medium text-gray-800">Email</h4>
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="card p-8 bg-white h-full">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Contact Information</h3>
+                        <p class="text-gray-700 mb-8">
+                            Feel free to reach out through any of the channels below. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                        </p>
+                        
+                        <div class="mb-8">
+                            <h4 class="font-medium text-gray-800 mb-4">Email</h4>
                             <p class="text-gray-600">madala.chaitanyaprabhu@gmail.com</p>
                         </div>
-                    </div>
-                    
-                    <div class="mt-10">
-                        <h4 class="font-medium text-gray-800 mb-4">Follow Me</h4>
-                        <div class="flex">
-                            <a href="https://scholar.google.com/citations?user=VHumc_gAAAAJ&hl=en%20ew" target="_blank" class="social-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/mc-prabhu/" target="_blank" class="social-icon">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/" target="_blank" class="social-icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.instagram.com/chaitanya_mcp/" target="_blank" class="social-icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
+                        
+                        <div class="mb-8">
+                            <h4 class="font-medium text-gray-800 mb-4">Location</h4>
+                            <p class="text-gray-600">India</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-gray-800 mb-4">Follow Me</h4>
+                            <div class="flex">
+                                <a href="https://scholar.google.com/citations?user=VHumc_gAAAAJ&hl=en%20ew" target="_blank" class="social-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/mc-prabhu/" target="_blank" class="social-icon">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/" target="_blank" class="social-icon">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.instagram.com/chaitanya_mcp/" target="_blank" class="social-icon">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="md:w-1/2">
+                <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
                     <div class="card p-8 bg-white">
                         <h3 class="text-2xl font-bold mb-6 text-gray-800">Send Me a Message</h3>
-                        <form>
+                        <form id="contact-form">
                             <div class="mb-6">
                                 <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
                                 <input type="text" id="name" class="form-input w-full" placeholder="MCPRABHU" required>
                             </div>
                             <div class="mb-6">
                                 <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Your Email</label>
-                                <input type="email" id="email" class="form-input w-full" placeholder="prabhu@gmail.com" required>
+                                <input type="email" id="email" class="form-input w-full" placeholder="prabhu@gmxxl.com" required>
                             </div>
                             <div class="mb-6">
                                 <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
-                                <textarea id="message" rows="4" class="form-input w-full" placeholder="Shoot me an email first — that’s where the magic begins, and I’d love to brainstorm anything exciting from there!" required></textarea>
+                                <textarea id="message" rows="4" class="form-input w-full" placeholder="Shoot me an email first — that's where the magic begins, and I'd love to brainstorm anything exciting from there!" required></textarea>
                             </div>
                             <button type="submit" class="btn gradient-bg text-white w-full">Send Message</button>
                         </form>
@@ -955,7 +1383,7 @@
                     <h2 class="text-2xl font-bold">
                         <span class="text-indigo-400">CHAITANYA_</span>MCP
                     </h2>
-                    <p class="text-gray-400 mt-2">Apesi odipoina vadu unadu kani Prayatnistu odipoinavadu ledu...!</p>
+                    <p class="text-gray-400 mt-2">Samajam Abhiprayalu Nee Alochnalu Marchakodadhu — Avi Sthayi Batti Automatic ga Maruthayi . . .!</p>
                 </div>
                 <div class="flex flex-wrap justify-center gap-4">
                     <a href="#home" class="text-gray-400 hover:text-white transition">Home</a>
@@ -963,7 +1391,7 @@
                     <a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a>
                     <a href="#achievements" class="text-gray-400 hover:text-white transition">Achievements</a>
                     <a href="#research" class="text-gray-400 hover:text-white transition">Research</a>
-                    <a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a>
+                    <a href="#MonthlyUpdates" class="text-gray-400 hover:text-white transition">Monthly Updates</a>
                     <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
                 </div>
             </div>
@@ -987,6 +1415,37 @@
         </div>
     </footer>
 
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-button" id="chatbot-toggle">
+            <i class="fas fa-comment"></i>
+        </div>
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <h3 class="font-bold">Buddi Bot</h3>
+                <p class="text-xs opacity-80">Ask me anything about Chaitanya</p>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot-message">
+                    👋 Hello! I'm Chaitanya's virtual assistant Named as Buddi. I can help you learn more about his work, Say Hi to Buddi...!!
+                </div>
+                <div class="suggestions">
+                    <div class="suggestion" onclick="sendSuggestion('Tell me about Chaitanya\'s background')">Tell me about Chaitanya's background</div>
+                    <div class="suggestion" onclick="sendSuggestion('What are Chaitanya\'s key skills?')">What is Chaitanya good at?</div>
+                    <div class="suggestion" onclick="sendSuggestion('Show me Chaitanya\'s research publications')">Show me research publications</div>
+                    <div class="suggestion" onclick="sendSuggestion('What projects has Chaitanya worked on?')">What kind of support does Chaitanya offer?</div>
+                    <div class="suggestion" onclick="sendSuggestion('How can I contact Chaitanya?')">How can I find Chaitanya social media ? </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input-field" placeholder="Type your message...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Initialize AOS animation library
         document.addEventListener('DOMContentLoaded', function() {
@@ -995,7 +1454,7 @@
             // Initialize skill bars
             document.querySelectorAll('.skill-bar').forEach(function(bar) {
                 setTimeout(function() {
-                    bar.style.width = bar.parentElement.previousElementSibling.querySelector('span').textContent;
+                    bar.style.width = bar.getAttribute('data-width');
                 }, 500);
             });
             
@@ -1009,9 +1468,9 @@
             });
             
             // Initialize Swiper for logo slideshow
-            var swiper = new Swiper('.logos-swiper', {
-                slidesPerView: 1,
-                spaceBetween: 10,
+            var logosSwiper = new Swiper('.logos-swiper', {
+                slidesPerView: 3,
+                spaceBetween: 30,
                 loop: true,
                 autoplay: {
                     delay: 2500,
@@ -1036,6 +1495,160 @@
                     },
                 }
             });
+            
+            // Initialize Swiper for monthly updates slideshow
+            var monthlyUpdatesSwiper = new Swiper('.monthly-updates-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 4000, // Changed from 5000 to 4000 (4 seconds)
+                    disableOnInteraction: false,
+                    reverseDirection: true, // Reversed direction from left-to-right to right-to-left
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    }
+                }
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+            
+            // Contact form submission
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            });
+            
+            // Chatbot functionality
+            const chatbotToggle = document.getElementById('chatbot-toggle');
+            const chatbotWindow = document.getElementById('chatbot-window');
+            const chatbotMessages = document.getElementById('chatbot-messages');
+            const chatbotInput = document.getElementById('chatbot-input-field');
+            const chatbotSend = document.getElementById('chatbot-send');
+            
+            chatbotToggle.addEventListener('click', function() {
+                chatbotWindow.style.display = chatbotWindow.style.display === 'block' ? 'none' : 'block';
+            });
+            
+            function sendMessage() {
+                const message = chatbotInput.value.trim();
+                if (message === '') return;
+                
+                // Add user message
+                const userMessageDiv = document.createElement('div');
+                userMessageDiv.className = 'message user-message';
+                userMessageDiv.textContent = message;
+                chatbotMessages.appendChild(userMessageDiv);
+                
+                // Clear input
+                chatbotInput.value = '';
+                
+                // Scroll to bottom
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                
+                // Simulate typing
+                setTimeout(function() {
+                    const typingDiv = document.createElement('div');
+                    typingDiv.className = 'message bot-message typing';
+                    typingDiv.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+                    chatbotMessages.appendChild(typingDiv);
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                    
+                    // Get bot response after delay
+                    setTimeout(function() {
+                        chatbotMessages.removeChild(typingDiv);
+                        const botResponse = getBotResponse(message);
+                        const botMessageDiv = document.createElement('div');
+                        botMessageDiv.className = 'message bot-message';
+                        botMessageDiv.innerHTML = botResponse;
+                        chatbotMessages.appendChild(botMessageDiv);
+                        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                    }, 1500);
+                }, 500);
+            }
+            
+            function sendSuggestion(suggestion) {
+                chatbotInput.value = suggestion;
+                sendMessage();
+            }
+            
+            chatbotSend.addEventListener('click', sendMessage);
+            
+            chatbotInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            function getBotResponse(message) {
+                const lowerMessage = message.toLowerCase();
+                
+                if (lowerMessage.includes('background') || lowerMessage.includes('about')) {
+                    return "Madala Chaitanya Prabhu is a tech innovator and researcher specializing in machine learning, data science, and computer vision. With multiple IEEE publications and achievements like the INDIAai Fellowship, he combines academic excellence with practical problem-solving. His work spans from stock market prediction to medical diagnostics and industrial safety systems.";
+                } else if (lowerMessage.includes('skill') || lowerMessage.includes('expertise')) {
+                    return "Chaitanya excels in several technical areas including Python (95%), Machine Learning (90%), Data Science (85%), Computer Vision (85%), and Web Development (80%). He also possesses strong professional skills in Research & Analysis (95%), Problem Solving (95%), and Leadership (90%).";
+                } else if (lowerMessage.includes('hi') || lowerMessage.includes('hello') || lowerMessage.includes('hlo')) {
+                    return "Hi Buddy..! How can i help you to reach Chaitanya";
+				} else if (lowerMessage.includes('research') || lowerMessage.includes('publication')) {
+                    return "Chaitanya's research focuses on applying machine learning and data analytics to diverse fields. His publications cover stock market prediction, weather forecasting, industrial safety systems, social media trend analysis, and sports analytics. All his papers are published in IEEE journals and indexed in Scopus. GS- https://bit.ly/MCPRABHU";
+                } else if (lowerMessage.includes('project')) {
+                    return "Some of Chaitanya's standout projects include deep learning for pneumonia detection, stop-loss hedging strategies for stock markets, computer vision safety systems for industrial equipment, BioGPT for disease detection, and Hydrosavvy - an AI-powered irrigation system for sustainable farming.";
+                } else if (lowerMessage.includes('contact') || lowerMessage.includes('reach') || lowerMessage.includes('email')) {
+                    return "You can reach Chaitanya through his email or connect with him on LinkedIn at https://www.linkedin.com/in/mc-prabhu/. He's also active on Google Scholar and Instagram. Would you like me to help you draft a message to him?";
+                } else if (lowerMessage.includes('social media') || lowerMessage.includes('other')) {
+                    return "Chaitanya's Social Media:<br><br>" + 
+                           "• Instagram: <a href='https://www.instagram.com/chaitanya_mcp/' target='_blank'>@chaitanya_mcp</a><br>" + 
+                           "• Snapchat: mcp_1207<br>" + 
+                           "• LinkedIn: <a href='https://www.linkedin.com/in/mc-prabhu/' target='_blank'>linkedin.com/in/mc-prabhu</a>";
+				} else if (lowerMessage.includes('education') || lowerMessage.includes('studies')) {
+                    return "Chaitanya Higher edu Btech at Kalsaligam university, CSE - Data Science Expertised person in DS And OUTSTANDING STUTENT OF THE BATCH 2021-2025 ";
+				} else if (lowerMessage.includes('support') || lowerMessage.includes('gudience')) {
+                    return "Chaitanya can connect with you by this platforms topmate : https://topmate.io/chaitanya_mcp   Linkedin : https://www.linkedin.com/in/mc-prabhu/ ";
+				} else if (lowerMessage.includes('expert') || lowerMessage.includes('good at')) {
+                    return "Chaitanya_MCP is a tech-driven person passionate about data science, AI-agents, and impactful innovation. He has published 14+ research papers, interned at IIT Madras and IBM, and represented his work in top hackathons like SIH , MSME, where he interacted with the Prime Minister. A natural leader and organizer, he blends technical skill with real-world problem-solving and community-driven initiatives.";
+				} else if (lowerMessage.includes('resume') || lowerMessage.includes('cv')) {
+                    return "Chaitanya's resume showcases his academic achievements, professional experience, technical skills, and research publications. You can view or download it directly from the portfolio by clicking the 'View Resume' button in the hero section.";
+                } else {
+                    return "I don't have specific information about that, but Chaitanya would be happy to discuss it with you directly. Would you like to know how to contact him, or is there something else I can help with? Try with more creative Thougth";
+                }
+            }
         });
     </script>
 </body>
